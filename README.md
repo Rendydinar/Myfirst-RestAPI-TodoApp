@@ -10,7 +10,7 @@ My First REST API Using NodeJs Todo-app. This REST-API use CRUD operations.
 -    GET: 
         - /todo/:id  Menampilkan Todo Berdasarkan id 
 -   POST: 
-        -     /todo  Menambahkan Todo
+        - /todo  Menambahkan Todo
 -    PUT: 
         - /todo/:id  Mengubah Todo berdasarkan id
 - DELETE: 
