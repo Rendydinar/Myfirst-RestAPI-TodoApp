@@ -1,0 +1,22 @@
+{
+  "name": "rest_api-todo_app",
+  "version": "1.0.0",
+  "description": "My First REST API Using NodeJs Todo-app. This API use CRUD operations.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https:github.com/Rendydinar/FirstRestApi-Todoapp"
+  },
+  "author": "r3ndyDinar",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.6.9",
+    "morgan": "^1.9.1"
+  }
+}
