@@ -13,7 +13,7 @@ module.exports = function(app) {
 
         mytodo.save((err, result) => {
             if(err) res.status(400).send({'error': 'Terjadi kesalahan saat menambahkan todo anda'});
-            else res.status(200).send(result);
+            res.status(200).send(result);
         });
     });
 
@@ -22,8 +22,16 @@ module.exports = function(app) {
         const id = req.params.id;
         MyTodo.findById(id, (err, item) => {
             if(err) res.status(400).send({'error': 'Terjadi kesalahan saat mengambil todo anda'});
-            else res.status(200).send(item);
+            res.status(200).send(item);
         });
+    });
+
+    // rute menampilkan seluruh daftar todo
+    app.get('/todo', (req, res) => {
+        MyTodo.find((err, item) => {
+            if(err) res.status(400).send({'error': 'Terjadi kesalahan saat mengambil seluruh daftar todo anda'});
+            res.status(200).send(item);
+        })
     });
 
     // rute mendelete todo berdasarkan id
@@ -31,7 +39,7 @@ module.exports = function(app) {
         const id = req.params.id;
         MyTodo.deleteOne({_id: id}, (err, result) => {
            if(err) res.status(400).send({'error': 'Terjadi kesalahan saat menghapus todo anda'}); 
-           else res.status(200).send(result);
+            res.status(200).send(result);
         });
     });
 
@@ -41,7 +49,7 @@ module.exports = function(app) {
         let newTodo = { judul: String(req.body.judul), deskripsi: String(req.body.deskripsi) }; 
         MyTodo.updateOne({_id: id}, {$set: {judul: newTodo.judul, deskripsi: newTodo.deskripsi}}, (err, result) => {
             if(err) res.status(400).send({'error': 'Terjadi kesalahan saat mengupdate/mengubah todo anda'});
-            else res.status(200).send(result);
+            res.status(200).send(result);
         });
     });
 };

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const MyTodoSchema = new Schema({
+
     judul: {
         type: String,
         require: true
@@ -13,10 +14,14 @@ const MyTodoSchema = new Schema({
         require: true
     },
 
+    target: {
+        type: String,
+    },
+
     date: {
         type: Date,
         default: Date.now()
-    },
+    }
     
 });
 
