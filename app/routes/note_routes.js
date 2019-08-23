@@ -78,7 +78,7 @@ module.exports = function(app) {
                                     error: 'Internal Server Error'
                                 });
                             } else { 
-                                user.token = jwt.sign({user}, jwt.key);
+                                user.token = jwt.jwt.sign({user}, jwt.key);
                                 user.save((err, user) => {
                                     if(err) {
                                         res.status(501).json({
